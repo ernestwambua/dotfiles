@@ -1,0 +1,124 @@
+* {
+    border: none;
+    font-family: "SauceCodePro Nerd Font";
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(40, 40, 40, 0.4);
+    color: white;
+    border-radius: 5px;
+}
+
+#window {
+    font-weight: bold;
+    font-family: "Ubuntu";
+    margin-top: 8px;
+}
+/*
+#workspaces {
+    padding: 0 5px;
+}
+*/
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #d4be98;
+    border-top: 2px solid transparent;
+}
+
+#workspaces button.focused {
+    color: #98971a;
+    border-top: 2px solid #98971a;
+}
+
+#mode {
+    background: #d79921;
+    color: #282828;
+    padding: 0 3px;
+    margin: 0 5px;
+    font-weight: bold;
+    /* border-bottom: 3px solid white; */
+}
+
+#clock, 
+#idle_inhibitor, 
+#battery, 
+#cpu, 
+#memory, 
+#disk, 
+#network, 
+#pulseaudio,
+#bluetooth,
+#tray,
+#backlight,
+#power-profiles-daemon,
+#custom-spotify, 
+#custom-power, 
+#custom-reboot,
+#custom-lock,
+#custom-quit {
+    padding: 0 3px;
+    margin: 0 5px;
+    color: #d4be98;
+}
+
+#clock {
+}
+
+#battery {
+  margin-right: 10px;
+}
+
+#battery icon {
+    color: red;
+}
+
+#battery.charging {
+  color: #689d6a;
+}
+
+@keyframes blink {
+    to {
+        color: #cc241d;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: #d4be98;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#custom-spotify {
+    color: rgb(102, 220, 105);
+}
+
+#tray {
+}
+
