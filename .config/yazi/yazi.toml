@@ -4,12 +4,12 @@
 
 [manager]
 ratio = [1, 4, 3]
-sort_by = "alphabetical"
+sort_by = "mtime"
 sort_sensitive = false
 sort_reverse = false
 sort_dir_first = true
 sort_translit = false
-linemode = "none"
+linemode = "size"
 show_hidden = false
 show_symlink = true
 scrolloff = 5
@@ -55,6 +55,9 @@ play = [
   { run = 'mpv --force-window %*', orphan = true, for = "windows" },
   { run = '''mediainfo "$1"; echo "Press enter to exit"; read _''', block = true, desc = "Show media info", for = "unix" },
 ]
+zathura = [
+  { run = 'zathura "$0"', orphan = true, desc = "PDF Reader", for = "unix" },
+]
 
 [open]
 rules = [
@@ -68,6 +71,10 @@ rules = [
   { mime = "text/*", use = [
     "edit",
     "reveal",
+  ] },
+  # PDF, EPUB, CBZ
+  { name = "*.pdf, *.epub, *.cbz", use = [
+    "zathura",
   ] },
   # Image
   { mime = "image/*", use = [
