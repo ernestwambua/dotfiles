@@ -58,6 +58,9 @@ play = [
 zathura = [
   { run = 'zathura "$0"', orphan = true, desc = "PDF Reader", for = "unix" },
 ]
+epub-thumbnailer = [
+  { run = 'gnome-epub-thumbnailer "$0"', desc = "EPUB Thumbnailer", for = "linux" },
+]
 
 [open]
 rules = [
@@ -72,8 +75,8 @@ rules = [
     "edit",
     "reveal",
   ] },
-  # PDF, EPUB, CBZ
-  { name = "*.pdf, *.epub, *.cbz", use = [
+  # PDF, EPUB, DJVU, MOBI, CBR, CBZ
+  { name = "*.{pdf,epub,djvu,mobi,cbr,cbz}", use = [
     "zathura",
   ] },
   # Image
@@ -181,6 +184,10 @@ previewers = [
   # Fallback
   { name = "*", run = "file" },
 ]
+
+[[plugin.prepend_previewers]]
+mime = "application/epub+zip"
+run = "epub-preview"
 
 [input]
 cursor_blink = false
