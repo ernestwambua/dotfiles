@@ -1,4 +1,4 @@
-@define-color cc-bg #32302f;
+@define-color cc-bg rgba(50, 48, 47, 1);
 @define-color noti-border-color #32302f;
 @define-color noti-bg #3c3836;
 @define-color noti-bg-darker #3c3836;
@@ -9,32 +9,33 @@
 @define-color bg-selected #fabd2f;
  
 * {
-    font-family: JetBrainsMono NFP;
+    font-family: SauceCodePro Nerd Font;
     font-weight: bold;
-	font-size: 14px
+	  font-size: 14px
 }
  
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
-    opacity: 1;
-    background: @noti-bg-darker
+    opacity: 0;
+    background: @noti-bg-darker;
 }
  
 .notification-row {
     outline: none;
-    margin: 20px;
+    margin: 2px;
     padding: 0;
 }
  
 .notification {
     background: transparent;
     margin: 0px;
+    box-shadow: none;
 }
  
 .notification-content {
     background: @cc-bg;
     padding: 7px;
-    border-radius: 0px;
+    border-radius: 7px;
     border: 2px solid #85796f;
     margin: 0;
 }
@@ -44,7 +45,7 @@
     color: @cc-bg;
     text-shadow: none;
     padding: 0;
-    border-radius: 0px;
+    border-radius: 3px;
     margin-top: 5px;
     margin-right: 5px;
 }
@@ -90,7 +91,7 @@
 .control-center {
     background: @cc-bg;
     border: 2px solid #85796f;
-    border-radius: 0px;
+    border-radius: 7px;
 }
  
 .control-center-list {
@@ -115,7 +116,7 @@
     padding: 5px 10px;
     margin: 10px 10px 5px 10px;
     font-size: 1.5rem;
-    border-radius: 5px;
+    border-radius: 7px;
 }
  
 .widget-title>button {
@@ -124,7 +125,7 @@
     text-shadow: none;
     background: @noti-bg;
     box-shadow: none;
-    border-radius: 5px;
+    border-radius: 7px;
 }
  
 .widget-title>button:hover {
