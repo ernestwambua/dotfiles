@@ -60,10 +60,15 @@ window#waybar {
 #custom-power, 
 #custom-reboot,
 #custom-lock,
-#custom-quit {
+#custom-quit,
+#custom-notification {
     padding: 0 3px;
     margin: 0 5px;
     color: #d4be98;
+}
+
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
 }
 
 #clock {
