@@ -1,8 +1,0 @@
-[19:55:28 2025-01-06] FETCHING Version 2.38.7
-[19:55:28 2025-01-06] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.38.7/spicetify-2.38.7-linux-amd64.tar.gz
-[19:55:43 2025-01-06] EXTRACTING /home/omnissiah/.spicetify/spicetify.tar.gz
-[19:55:43 2025-01-06] SETTING EXECUTABLE PERMISSIONS TO /home/omnissiah/.spicetify/spicetify
-[19:55:43 2025-01-06] REMOVING /home/omnissiah/.spicetify/spicetify.tar.gz
-[19:55:43 2025-01-06] spicetify path already set in /home/omnissiah/.zshrc, continuing...
-[19:55:43 2025-01-06] spicetify v2.38.7 was installed successfully to /home/omnissiah/.spicetify
-[19:55:43 2025-01-06] Run 'spicetify --help' to get started
