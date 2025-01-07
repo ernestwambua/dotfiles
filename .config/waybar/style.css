@@ -1,6 +1,6 @@
 * {
     border: none;
-    font-family: "SauceCodePro Nerd Font";
+    font-family: "JetBrainsMono Nerd Font";
     font-weight: bold;
     font-size: 13px;
     min-height: 0;
@@ -13,9 +13,6 @@ window#waybar {
 }
 
 #window {
-    font-weight: bold;
-    font-family: "Ubuntu";
-    margin-top: 8px;
 }
 /*
 #workspaces {
@@ -27,15 +24,16 @@ window#waybar {
     padding: 0 5px;
     background: transparent;
     color: #d4be98;
+    border-radius: 0;
     border-top: 2px solid transparent;
 }
 
-#workspaces button.focused {
+#workspaces button.active {
     color: #98971a;
     border-top: 2px solid #98971a;
 }
 
-#mode {
+#submap {
     background: #d79921;
     color: #282828;
     padding: 0 3px;
@@ -86,12 +84,6 @@ window#waybar {
   color: #689d6a;
 }
 
-@keyframes blink {
-    to {
-        color: #cc241d;
-    }
-}
-
 #battery.warning:not(.charging) {
     color: #d4be98;
     animation-name: blink;
@@ -125,5 +117,11 @@ window#waybar {
 }
 
 #tray {
+}
+
+@keyframes blink {
+    to {
+        color: #cc241d;
+    }
 }
 
