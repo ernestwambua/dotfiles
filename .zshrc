@@ -2,6 +2,9 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export SUDO_PROMPT="$(tput setaf 1 bold)Password:$(tput sgr0) "
 
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 

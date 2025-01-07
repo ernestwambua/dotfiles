@@ -4,6 +4,9 @@
 
 export SUDO_PROMPT="$(tput setaf 1 bold)Password:$(tput sgr0) "
 
+export MANPAGER='nvim +Man!'
+export MANWIDTH=999
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
