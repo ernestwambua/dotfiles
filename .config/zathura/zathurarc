@@ -50,11 +50,30 @@ set completion-fg "#E0E0E0" #0C
 set notification-bg "#90A959" #0B
 set notification-fg "#151515" #00
 
-set recolor "true"
-set recolor-lightcolor "#000000" #00
-set recolor-darkcolor "#E0E0E0" #06
-set recolor-reverse-video "true"
-set recolor-keephue "true"
+set recolor true
+set recolor-keephue true
+
+# gruvbox dark    
+map <F1> focus_inputbar ":set recolor-lightcolor rgba(40,40,40,1)"    
+map <F2> focus_inputbar ":set recolor-darkcolor rgba(235,219,178,1)"    
+map ! feedkeys "<F1><Return><F2><Return>"    
+# gruvbox dark-hard        
+map <F3> focus_inputbar ":set recolor-lightcolor rgba(29,32,33,1)"    
+map <F4> focus_inputbar ":set recolor-darkcolor rgba(235,219,178,1)"    
+map @ feedkeys "<F3><Return><F4><Return>"    
+# gruvbox light 
+map <F6> focus_inputbar ":set recolor-lightcolor rgba(251,241,199,1)"    
+map <F7> focus_inputbar ":set recolor-darkcolor rgba(60,56,54,1)"    
+map \# feedkeys "<F6><Return><F7><Return>"
+# gruvbox light-hard    
+map <F8> focus_inputbar ":set recolor-lightcolor rgba(249,245,215,1)"    
+map <F9> focus_inputbar ":set recolor-darkcolor rgba(60,56,54,1)"    
+map $ feedkeys "<F8><Return><F9><Return>"  
+# original (black on white)    
+map <F10> focus_inputbar ":set recolor-lightcolor rgba(255,255,255,1)"    
+map <F11> focus_inputbar ":set recolor-darkcolor rgba(0,0,0,1)"    
+map % feedkeys "<F10><Return><F11><Return>"  
+
 
 
 set render-loading "false"
@@ -64,6 +83,6 @@ unmap f
 map f toggle_fullscreen
 map [fullscreen] f toggle_fullscreen
 
-map <A-d> recolor
+# map <S-c> recolor
 
 set selection-clipboard clipboard
