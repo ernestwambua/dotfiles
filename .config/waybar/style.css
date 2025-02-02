@@ -145,13 +145,14 @@ window#waybar {
 #group-hardware {
 }
 
-#network.disconnected {
-    color: #f53c3c;
-}
 
 #bluetooth.on {
   color: #689d6a;
 }
+
+/*#bluetooth.connected {*/
+/*  color: #d3869b;*/
+/*}*/
 
 #pulseaudio  {
   color: #83a598;
