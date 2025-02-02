@@ -169,8 +169,8 @@ window#waybar {
 }
 
 @keyframes blink {
-    to {
-        color: #cc241d;
-    }
+    /*to {*/
+    /*    color: #cc241d;*/
+    /*}*/
 }
 
