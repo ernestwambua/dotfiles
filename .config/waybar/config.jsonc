@@ -8,42 +8,42 @@
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/submap",
-    "custom/media"
+    "custom/media",
+    "tray"
   ],
   "modules-center": [
-    "clock"
+    "clock",
+    "custom/notification"
   ],
   "modules-right": [
-    "bluetooth",
     "backlight",
     "mpd",
     "pulseaudio",
+    "bluetooth",
     "idle_inhibitor",
     "keyboard-state",
     "group/hardware",
-    "tray",
     "network",
     "group/battery-power-profiles",
-    "group/power",
-    "custom/notification"
+    "group/power"
   ],
   // Modules configuration
   "hyprland/workspaces": {
     "format": "{icon}",
     "format-icons": {
-      "1": "",
-      "2": "",
-      "3": "",
-      "4": "",
-      "5": "",
-      "6": "",
-      "7": "",
-      "8": "",
-      "9": "",
-      "10": "",
-      "urgent": "",
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      "6": " ",
+      "7": " ",
+      "8": " ",
+      "9": " ",
+      "10": " ",
+      "urgent": " ",
       // "focused": "",
-      "default": ""
+      "default": " "
     },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
@@ -60,13 +60,6 @@
   "hyprland/submap": {
     "format": "<span style=\"italic\">{}</span>"
   },
-  // "sway/scratchpad": {
-  //     "format": "{icon} {count}",
-  //     "show-empty": false,
-  //     "format-icons": ["", ""],
-  //     "tooltip": true,
-  //     "tooltip-format": "{app}: {title}"
-  // },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
     "format-disconnected": "Disconnected ",
@@ -120,36 +113,36 @@
         "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
         "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       }
-    },
+    }
   },
   "cpu": {
-    "format": "{usage}% "
+    "format": "{usage}%  "
   },
   "memory": {
-    "format": "{}% 󰘚"
+    "format": "{}% 󰘚 "
   },
   "disk": {
     "interval": 30,
     "unit": "GB",
-    "format": "{percentage_free}% ",
-    "format-alt": "{specific_free:0.2f} GB 󰋊"
+    "format": "{percentage_free}%  ",
+    "format-alt": "{specific_free:0.2f} GB 󰋊 "
   },
   "battery": {
     "bat": "BAT0",
     "states": {
       "good": 95,
-      "warning": 30,
-      "critical": 15
+      "warning": 50,
+      "critical": 25
     },
     "format": "{capacity}% {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
     "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ]
   },
   "backlight": {
@@ -172,25 +165,27 @@
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "",
-      "performance": "",
-      "balanced": "",
-      "power-saver": ""
+      "default": " ",
+      "performance": " ",
+      "balanced": " ",
+      "power-saver": " "
     }
   },
   "network": {
-    // "interface": "wlp2s0", // (Optional) To force the use of this interface
-    "format-wifi": "{signalStrength}% ",
-    "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-    // "format-disconnected": "Disconnected ⚠"
+    "format-wifi": " ",
+    "format-ethernet": " ",
+    "format-disconnected": "󱚵 ",
+    "tooltip-format-wifi": "{ssid}: {signalStrength}%",
+    "tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip-format-disconnected": "disconnected",
+    "on-click": "nmcli networking $(nmcli networking connectivity | grep -q 'full' && echo off || echo on)"
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format": "{icon} {format_source}",
+    "format-bluetooth": "{icon}  {format_source}",
     "format-bluetooth-muted": "  {icon}  {format_source}",
     "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
+    "format-source": " ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": "",
@@ -200,44 +195,46 @@
       "portable": "",
       "car": "",
       "default": [
-        "",
-        "",
-        ""
+        " ",
+        " ",
+        "  "
       ]
     },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "tooltip-format": "{icon} {volume}"
   },
   "bluetooth": {
-    "format": " {status}",
+    "format": " ",
     "format-connected": " {device_alias}",
     "format-connected-battery": " {device_alias} {device_battery_percentage}%",
     // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
     "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+    "on-click": "bluetoothctl power $(bluetoothctl show | grep -q 'Powered: yes' && echo off || echo on)"
   },
   "group/battery-power-profiles": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 500,
       "children-class": "not-power",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "battery", // First element is the "group leader" and won't ever be hidden
-      "power-profiles-daemon",
+      "power-profiles-daemon"
     ]
   },
   "group/hardware": {
     "orientation": "inherit",
     "drawer": {
-      "transition-duration": 500,
+      "transition-duration": 500
     },
     "modules": [
+      "cpu",
       "memory",
-      "disk",
-      "cpu"
+      "disk"
     ]
   },
   "group/power": {
@@ -245,41 +242,41 @@
     "drawer": {
       "transition-duration": 500,
       "children-class": "not-power",
-      "transition-left-to-right": false,
+      "transition-left-to-right": false
     },
     "modules": [
       "custom/power", // First element is the "group leader" and won't ever be hidden
-      "custom/reboot",
       "custom/lock",
+      "custom/reboot"
     ]
   },
   "custom/lock": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "hyprlock"
+    "format": " ",
+    "on-click": "hyprlock",
+    "tooltip-format": "lock"
   },
   "custom/reboot": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "reboot"
+    "format": " ",
+    "on-click": "reboot",
+    "tooltip-format": "reboot"
   },
   "custom/power": {
-    "format": "",
-    "tooltip": false,
-    "on-click": "shutdown now"
+    "format": " ",
+    "on-click": "shutdown now",
+    "tooltip-format": "shutdown"
   },
   "custom/notification": {
     "tooltip": false,
     "format": "{icon}",
     "format-icons": {
       "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
+      "none": " ",
       "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
+      "dnd-none": " ",
       "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "",
+      "inhibited-none": " ",
       "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "dnd-inhibited-none": " "
     },
     "return-type": "json",
     "exec-if": "which swaync-client",

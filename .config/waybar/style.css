@@ -7,30 +7,30 @@
 }
 
 window#waybar {
-    background-color: rgba(40, 40, 40, 0.4);
-    color: white;
-    border-radius: 5px;
+    background-color: rgba(40, 40, 40, 0.1);
+    color: #d4be98;
+    border-radius: 8px;
 }
 
 #window {
+  border-radius: 5px;
 }
-/*
-#workspaces {
-    padding: 0 5px;
-}
-*/
 
 #workspaces button {
     padding: 0 5px;
     background: transparent;
     color: #d4be98;
-    border-radius: 0;
-    border-top: 2px solid transparent;
+    /*border-radius: 0;*/
+    border-top: none;
+}
+
+#workspaces button.focus {
+  border-top: 1px solid #d4be98;
 }
 
 #workspaces button.active {
     color: #98971a;
-    border-top: 2px solid #98971a;
+    border-top: 1px solid #98971a;
 }
 
 #submap {
@@ -65,15 +65,31 @@ window#waybar {
     color: #d4be98;
 }
 
+#custom-power {
+  color: #fb4934;
+}
+
+#custom-lock {
+  color: #d3869b;
+}
+
+#custom-reboot {
+  color: #fabd2f;
+}
+
+#backlight {
+  color: #fabd2f;
+}
+
+#idle_inhibitor.activated {
+  color: #689d6a;
+}
+
 #custom-notification {
   font-family: "NotoSansMono Nerd Font";
 }
 
 #clock {
-}
-
-#battery {
-  margin-right: 10px;
 }
 
 #battery icon {
@@ -82,31 +98,63 @@ window#waybar {
 
 #battery.charging {
   color: #689d6a;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-#battery.warning:not(.charging) {
-    color: #d4be98;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+#battery.good {
+  color: #689d6a;
+}
+
+#battery.warning {
+  color: #fe8019;
+}
+
+#battery.critical {
+  color: #d4be98;
+}
+
+#battery.critical:not(.charging) {
+  color: #d4be98;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #cpu {
+  color: #d3869b;
 }
 
 #memory {
+  color: #d3869b;
+}
+
+#disk {
+  color: #d3869b;
 }
 
 #network {
+  color: #689d6a;
+}
+
+#group-hardware {
 }
 
 #network.disconnected {
-    background: #f53c3c;
+    color: #f53c3c;
 }
 
-#pulseaudio {
+#bluetooth.on {
+  color: #689d6a;
+}
+
+#pulseaudio  {
+  color: #83a598;
 }
 
 #pulseaudio.muted {
