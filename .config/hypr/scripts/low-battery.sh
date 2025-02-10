@@ -2,9 +2,9 @@
 
 while true; do
   battery=$(upower -i "$(upower -e | grep BAT)" | grep -E "percentage" | awk '{print $2}' | tr -d '%')
-  if ["$battery" -le "20"]; then
+  if [ "$battery" -le "20" ]; then
     hyprctl notify 0 5000 0 "  Low battery: ${battery}%  " &&
-      pw-play low-battery.mp3
+      pw-play ~/.config/hypr/scripts/low-battery.mp3
     sleep 240
   else
     sleep 120
