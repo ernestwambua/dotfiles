@@ -25,12 +25,12 @@ window#waybar {
 }
 
 #workspaces button.focus {
-  border-top: 1px solid #d4be98;
+  /*border-top: 1px solid #d4be98;*/
 }
 
 #workspaces button.active {
     color: #98971a;
-    border-top: 1px solid #98971a;
+    /*border-top: 1px solid #98971a;*/
 }
 
 #submap {
@@ -106,7 +106,7 @@ window#waybar {
 }
 
 #battery.good {
-  color: #689d6a;
+  /*color: #689d6a;*/
 }
 
 #battery.warning {
