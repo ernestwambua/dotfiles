@@ -12,9 +12,10 @@
 ## style-11    style-12    style-13    style-14    style-15
 
 dir="$HOME/.config/rofi/launchers/type-1"
-theme='style-1'
+theme='style-11'
 
 ## Run
 rofi \
-    -show drun \
-    -theme ${dir}/${theme}.rasi
+  -modi emoji \
+  -show emoji \
+  -theme ${dir}/${theme}.rasi

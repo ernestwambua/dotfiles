@@ -11,9 +11,10 @@
 ## style-6     style-7     style-8     style-9     style-10
 
 dir="$HOME/.config/rofi/launchers/type-3"
-theme='style-10'
+theme='style-4'
 
 ## Run
 rofi \
-    -show drun \
-    -theme ${dir}/${theme}.rasi
+  -modi emoji \
+  -show emoji \
+  -theme ${dir}/${theme}.rasi
