@@ -31,7 +31,7 @@ ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
 edit = [
-  { run = '${EDITOR:-vi} "$@"', desc = "$EDITOR", block = true, for = "unix" },
+  { run = '${EDITOR:-nvim} "$@"', desc = "$EDITOR", block = true, for = "unix" },
   { run = 'code %*', orphan = true, desc = "code", for = "windows" },
   { run = 'code -w %*', block = true, desc = "code (block)", for = "windows" },
 ]
@@ -58,6 +58,15 @@ play = [
 zathura = [
   { run = 'zathura "$0"', orphan = true, desc = "PDF Reader", for = "unix" },
 ]
+imv = [
+  { run = 'dirname "$0" | imv -rn "$0"', orphan = true, desc = "Image Viewer", for = "unix" },
+]
+swappy = [
+  { run = 'swappy -f "$0"', orphan = true, desc = "Image Viewer", for = "unix" },
+]
+nsxiv = [
+  { run = 'nsxiv -fb -s F -g 1600x800+160+200 "$0"', orphan = true, desc = "Image Viewer", for = "unix" },
+]
 epub-thumbnailer = [
   { run = 'gnome-epub-thumbnailer "$0"', desc = "EPUB Thumbnailer", for = "linux" },
 ]
@@ -78,9 +87,20 @@ rules = [
   # PDF, EPUB, DJVU, MOBI, CBR, CBZ
   { name = "*.{pdf,epub,djvu,mobi,cbr,cbz}", use = [
     "zathura",
+    "open",
+    "reveal",
+  ] },
+  # WEBP Image
+  { mime = "image/webp", use = [
+    "nsxiv",
+    "open",
+    "reveal",
   ] },
   # Image
   { mime = "image/*", use = [
+    "imv",
+    "nsxiv",
+    "swappy",
     "open",
     "reveal",
   ] },
