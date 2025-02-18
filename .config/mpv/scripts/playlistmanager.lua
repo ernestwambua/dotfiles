@@ -86,14 +86,14 @@ local settings = {
   ]],
 
 	--loadfiles at startup if 1 or more items in playlist
-	loadfiles_on_start = false,
+	loadfiles_on_start = true,
 	-- loadfiles from working directory on idle startup
-	loadfiles_on_idle_start = false,
+	loadfiles_on_idle_start = true,
 	--always put loaded files after currently playing file
 	loadfiles_always_append = false,
 
 	--sort playlist when files are added to playlist
-	sortplaylist_on_file_add = false,
+	sortplaylist_on_file_add = true,
 
 	--default sorting method, must be one of: "name-asc", "name-desc", "date-asc", "date-desc", "size-asc", "size-desc".
 	default_sort = "name-asc",
@@ -111,11 +111,11 @@ local settings = {
 	save_playlist_on_file_end = false,
 
 	--show file title every time a new file is loaded
-	show_title_on_file_load = false,
+	show_title_on_file_load = true,
 	--show playlist every time a new file is loaded
 	show_playlist_on_file_load = false,
 	--close playlist when selecting file to play
-	close_playlist_on_playfile = false,
+	close_playlist_on_playfile = true,
 
 	--sync cursor when file is loaded from outside reasons(file-ending, playlist-next shortcut etc.)
 	--has the sideeffect of moving cursor if file happens to change when navigating
