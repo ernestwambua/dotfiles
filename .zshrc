@@ -110,6 +110,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias servarr="ssh admin@192.168.100.201"
+alias hycfg="nvim $HOME/dotfiles/.config/hypr/hyprland.conf"
+alias hykcfg="nvim $HOME/dotfiles/.config/hypr/keybindings.conf"
+alias wycfg="nvim $HOME/dotfiles/.config/waybar/config.jsonc"
+alias wyscfg="nvim $HOME/dotfiles/.config/waybar/style.css"
+alias stwa="stow --adopt ."
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
