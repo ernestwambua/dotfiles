@@ -16,6 +16,7 @@
     "custom/notification"
   ],
   "modules-right": [
+    "hyprland/language",
     "backlight",
     "mpd",
     "pulseaudio",
@@ -47,6 +48,10 @@
     },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "hyprland/language": {
+    "format": " {shortDescription}-{short}",
+    "on-click": "hyprctl switchxkblayout current next",
   },
   "keyboard-state": {
     "numlock": true,
