@@ -1,9 +1,0 @@
-[2025-02-17 19:09:01.709]	List of discovered tpm plugins: tmux-plugins/tpm tmux-plugins/tmux-sensible egel/tmux-gruvbox
-[2025-02-17 19:09:01.727]	Invoking /home/omnissiah/.config/tmux/plugins/tpm/bin/install_plugins
-[2025-02-17 19:09:01.777]	Installing "tmux-sensible"
-[2025-02-17 19:09:01.794]	Installing "tmux-gruvbox"
-[2025-02-17 19:09:01.813]	Already installed "tpm"
-[2025-02-17 19:09:03.449]	  "tmux-sensible" download success
-[2025-02-17 19:09:03.513]	  "tmux-gruvbox" download success
-[2025-02-17 19:09:03.532]	Done.
-
