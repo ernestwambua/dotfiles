@@ -3,18 +3,20 @@
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 20, // Waybar height (to be removed for auto height)
-  "width": 1270, // Waybar width
+  // "width": 1270, // Waybar width
   "margin-top": 5,
+  "margin-left": 5,
+  "margin-right": 5,
   "modules-left": [
     "hyprland/workspaces",
     "hyprland/submap",
     "custom/media",
     "tray"
   ],
-  "modules-center": [
-    "clock",
-    "custom/notification"
-  ],
+  // "modules-center": [
+  //   // "clock",
+  //   // "custom/notification"
+  // ],
   "modules-right": [
     "hyprland/language",
     "backlight",
@@ -26,7 +28,9 @@
     "group/hardware",
     "network",
     "group/battery-power-profiles",
-    "group/power"
+    "group/power",
+    "clock",
+    "custom/notification"
   ],
   // Modules configuration
   "hyprland/workspaces": {
