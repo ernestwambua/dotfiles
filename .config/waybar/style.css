@@ -93,8 +93,8 @@ window#waybar {
 #clock {
 }
 
-#battery icon {
-    color: red;
+#power-profiles-daemon {
+    color: #fe8019;
 }
 
 #battery.charging {

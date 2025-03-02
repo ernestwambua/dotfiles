@@ -170,7 +170,7 @@
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": " ",
+      "default": " ",
       "performance": " ",
       "balanced": " ",
       "power-saver": " "
@@ -223,8 +223,8 @@
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 500,
-      "children-class": "not-power",
-      "transition-left-to-right": false
+      // "children-class": "not-power",
+      // "transition-left-to-right": false
     },
     "modules": [
       "battery", // First element is the "group leader" and won't ever be hidden
