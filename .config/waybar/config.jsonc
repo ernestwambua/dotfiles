@@ -11,7 +11,6 @@
     "hyprland/workspaces",
     "hyprland/submap",
     "custom/media",
-    "tray"
   ],
   // "modules-center": [
   //   // "clock",
@@ -30,6 +29,7 @@
     "group/battery-power-profiles",
     "group/power",
     "clock",
+    "tray",
     "custom/notification"
   ],
   // Modules configuration
@@ -190,12 +190,12 @@
     "on-click": "nmcli networking $(nmcli networking connectivity | grep -q 'full' && echo off || echo on)"
   },
   "pulseaudio": {
-    "format": "{icon} {format_source}",
+    "format": "{icon}{volume}% {format_source}",
     "format-bluetooth": "{icon}  {format_source}",
     "format-bluetooth-muted": "  {icon}  {format_source}",
     "format-muted": " {format_source}",
     "format-source": " ",
-    "format-source-muted": "",
+    "format-source-muted": " ",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
