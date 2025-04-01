@@ -20,10 +20,9 @@
     "hyprland/language",
     "backlight",
     "mpd",
-    "pulseaudio",
     "bluetooth",
+    "wireplumber",
     "idle_inhibitor",
-    "keyboard-state",
     "group/hardware",
     "network",
     "group/battery-power-profiles",
@@ -189,6 +188,15 @@
     "tooltip-format-disconnected": "disconnected",
     "on-click": "nmcli networking $(nmcli networking connectivity | grep -q 'full' && echo off || echo on)"
   },
+
+  "wireplumber": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "on-click": "helvum",
+    "format-icons": ["", " ", " "],
+    "max-volume": 150
+  },
+
   "pulseaudio": {
     "format": "{icon}{volume}% {format_source}",
     "format-bluetooth": "{icon}  {format_source}",
