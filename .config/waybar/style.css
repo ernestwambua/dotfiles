@@ -50,8 +50,10 @@ window#waybar {
 #disk, 
 #network, 
 #pulseaudio,
+#wireplumber,
 #bluetooth,
 #tray,
+#mpd, 
 #backlight,
 #hyprland-language,
 #power-profiles-daemon,
@@ -155,7 +157,8 @@ window#waybar {
 /*  color: #d3869b;*/
 /*}*/
 
-#pulseaudio  {
+#pulseaudio,
+#wireplumber {
   color: #83a598;
 }
 
