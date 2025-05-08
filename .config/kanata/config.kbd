@@ -1,28 +1,24 @@
-;; defsrc is still necessary
 (defcfg
   process-unmapped-keys yes
 )
 
 (defsrc
-  caps a s d f j k l ;
-)
-(defvar
-  tap-time 149
-  hold-time 200
 )
 
-(defalias
-  escctrl (tap-hold 100 100 esc lctl)
-  a (multi f24 (tap-hold $tap-time $hold-time a lmet))
-  s (multi f24 (tap-hold $tap-time $hold-time s lalt))
-  d (multi f24 (tap-hold $tap-time $hold-time d lsft))
-  f (multi f24 (tap-hold $tap-time $hold-time f lctl))
-  j (multi f24 (tap-hold $tap-time $hold-time j rctl))
-  k (multi f24 (tap-hold $tap-time $hold-time k rsft))
-  l (multi f24 (tap-hold $tap-time $hold-time l ralt))
-  ; (multi f24 (tap-hold $tap-time $hold-time ; rmet))
+(deftemplate charmod (char mod)
+  (switch 
+    ((key-timing 3 less-than 250)) $char break
+    () (tap-hold-release 0 500 $char $mod) break
+  )
 )
 
-(deflayer base
-  @escctrl @a @s @d @f @j @k @l @;
+(deflayermap (main)
+  a (t! charmod a lmet)
+  s (t! charmod s lalt)
+  d (t! charmod d lsft)
+  f (t! charmod f lctl)
+  j (t! charmod j rctl)
+  k (t! charmod k rsft)
+  l (t! charmod l ralt)
+  ; (t! charmod ; rmet)
 )
