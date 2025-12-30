@@ -1,11 +1,19 @@
 [[plugin.deps]]
 use = "yazi-rs/plugins:full-border"
+<<<<<<< HEAD
 rev = "b886025"
+=======
+rev = "5d726c0"
+>>>>>>> origin/main
 hash = "3996fc74044bc44144b323686f887e1"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:mount"
+<<<<<<< HEAD
 rev = "b886025"
+=======
+rev = "5d726c0"
+>>>>>>> origin/main
 hash = "f10a14e823382d90fab5b3ee54cb38fe"
 
 [flavor]

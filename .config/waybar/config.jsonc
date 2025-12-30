@@ -19,7 +19,7 @@
   "modules-right": [
     "hyprland/language",
     "backlight",
-    "mpd",
+    // "mpd",
     "bluetooth",
     "wireplumber",
     "idle_inhibitor",
@@ -69,7 +69,7 @@
     "format": "<span style=\"italic\">{}</span>"
   },
   "mpd": {
-    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} {volume}%  ",
     "format-disconnected": "Disconnected ",
     "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
     "unknown-tag": "N/A",
@@ -188,15 +188,17 @@
     "tooltip-format-disconnected": "disconnected",
     "on-click": "nmcli networking $(nmcli networking connectivity | grep -q 'full' && echo off || echo on)"
   },
-
   "wireplumber": {
-    "format": "{volume}% {icon}",
+    "format": "{icon} {volume}%",
     "format-muted": "",
     "on-click": "helvum",
-    "format-icons": ["", " ", " "],
+    "format-icons": [
+      "",
+      "",
+      " "
+    ],
     "max-volume": 150
   },
-
   "pulseaudio": {
     "format": "{icon}{volume}% {format_source}",
     "format-bluetooth": "{icon}  {format_source}",
