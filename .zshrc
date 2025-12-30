@@ -117,6 +117,7 @@ alias hykcfg="nvim $HOME/dotfiles/.config/hypr/keybindings.conf"
 alias wycfg="nvim $HOME/dotfiles/.config/waybar/config.jsonc"
 alias wyscfg="nvim $HOME/dotfiles/.config/waybar/style.css"
 alias stwa="stow --adopt ."
+# alias code="flatpak run com.visualstudio.code"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
